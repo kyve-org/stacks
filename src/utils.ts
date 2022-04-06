@@ -4,7 +4,15 @@ import {
   Transaction,
 } from "@stacks/stacks-blockchain-api-types";
 import axios from "axios";
-import { Block, PaginatedResponse } from "./types";
+import { Block, StatusResponse, TransactionResponse } from "./types";
+
+export async function fetchHeight(endpoint: string): Promise<number> {
+  const { data } = await axios.get<StatusResponse>(
+    `${endpoint}/extended/v1/status`
+  );
+
+  return data.chain_tip.block_height;
+}
 
 export async function fetchBlock(
   endpoint: string,
@@ -54,7 +62,7 @@ async function fetchTransactions(
   height: number,
   offset: number = 0
 ): Promise<Transaction[]> {
-  const { data } = await axios.get<PaginatedResponse>(
+  const { data } = await axios.get<TransactionResponse>(
     `${endpoint}/extended/v1/tx/block_height/${height}?offset=${offset}`
   );
 

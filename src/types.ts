@@ -14,9 +14,21 @@ export interface Block
   microblocks_streamed: Microblock[];
 }
 
-export interface PaginatedResponse {
+export interface StatusResponse {
+  server_version: string;
+  status: string;
+  chain_tip: {
+    block_height: number;
+    block_hash: string;
+    index_block_hash: string;
+    microblock_hash: string;
+    microblock_sequence: number;
+  };
+}
+
+export interface TransactionResponse {
   limit: number;
   offset: number;
   total: number;
-  results: any[];
+  results: Transaction[];
 }
