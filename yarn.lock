@@ -476,10 +476,10 @@
     big-integer "^1.6.48"
     utility-types "^3.10.0"
 
-"@kyve/core@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@kyve/core/-/core-1.0.6.tgz#dd2df8924b5e58f3b9c6dc3309acf86244b2ffae"
-  integrity sha512-zDFYSIjxo5OZotQ62JaP7RfkZffCeXqKn5WJLqk7nlhSkDQGqoaQJ/0sN82Zi15aJQVkVqKGa2pDOPjC37ZUFw==
+"@kyve/core@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@kyve/core/-/core-1.0.7.tgz#fe170f13f702b550f2762842943cef7d1bbd08a7"
+  integrity sha512-pHBrcgixRI1MMxsldukwEkkg4snt5MQVvcToUWfGq9CUiFdjNnGjeSd5uD5ao0kIfdmY4qJF2w0mwItJuCoRNw==
   dependencies:
     "@cosmjs/proto-signing" "^0.27.1"
     "@cosmjs/stargate" "^0.27.1"
