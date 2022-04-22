@@ -11,7 +11,6 @@ export interface Block
   > {
   txs: Transaction[];
   microblocks_accepted: Microblock[];
-  microblocks_streamed: Microblock[];
 }
 
 export interface StatusResponse {

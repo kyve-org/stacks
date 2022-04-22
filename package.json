@@ -20,7 +20,7 @@
     "outputPath": "out"
   },
   "dependencies": {
-    "@kyve/core": "^1.0.7",
+    "@kyve/core": "^1.0.8",
     "axios": "^0.26.1"
   },
   "devDependencies": {

@@ -22,21 +22,19 @@ export async function fetchBlock(
     `${endpoint}/extended/v1/block/by_height/${height}`
   );
 
+  // @ts-ignore
+  delete data.microblocks_streamed;
+
   const txs = await fetchTransactions(endpoint, height);
   const microblocks_accepted = await fetchMicroblocks(
     endpoint,
     data.microblocks_accepted
-  );
-  const microblocks_streamed = await fetchMicroblocks(
-    endpoint,
-    data.microblocks_streamed
   );
 
   return {
     ...data,
     txs,
     microblocks_accepted,
-    microblocks_streamed,
   };
 }
 
