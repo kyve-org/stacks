@@ -26,34 +26,29 @@ export async function fetchBlock(
   delete data.microblocks_streamed;
 
   const txs = await fetchTransactions(endpoint, height);
-  const microblocks_accepted = await fetchMicroblocks(
-    endpoint,
-    data.microblocks_accepted
-  );
 
   return {
     ...data,
     txs,
-    microblocks_accepted,
   };
 }
 
-async function fetchMicroblocks(
-  endpoint: string,
-  hashes: string[]
-): Promise<Microblock[]> {
-  const res: Microblock[] = [];
+// async function fetchMicroblocks(
+//   endpoint: string,
+//   hashes: string[]
+// ): Promise<Microblock[]> {
+//   const res: Microblock[] = [];
 
-  for (const hash of hashes) {
-    const { data } = await axios.get<Microblock>(
-      `${endpoint}/extended/v1/microblock/${hash}`
-    );
+//   for (const hash of hashes) {
+//     const { data } = await axios.get<Microblock>(
+//       `${endpoint}/extended/v1/microblock/${hash}`
+//     );
 
-    res.push(data);
-  }
+//     res.push(data);
+//   }
 
-  return res;
-}
+//   return res;
+// }
 
 async function fetchTransactions(
   endpoint: string,

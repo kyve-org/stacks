@@ -10,7 +10,6 @@ export interface Block
     "txs" | "microblocks_accepted" | "microblocks_streamed"
   > {
   txs: Transaction[];
-  microblocks_accepted: Microblock[];
 }
 
 export interface StatusResponse {
