@@ -2,14 +2,15 @@ import {
   Block as _Block,
   Microblock,
   Transaction,
-} from "@stacks/stacks-blockchain-api-types";
+} from '@stacks/stacks-blockchain-api-types';
 
 export interface Block
   extends Omit<
     _Block,
-    "txs" | "microblocks_accepted" | "microblocks_streamed"
+    'txs' | 'microblocks_accepted' | 'microblocks_streamed'
   > {
   txs: Transaction[];
+  microblocks_accepted: Microblock[];
 }
 
 export interface StatusResponse {

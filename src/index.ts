@@ -1,9 +1,9 @@
-import KYVE from "@kyve/core";
-import { Block } from "./types";
-import { fetchBlock, fetchHeight } from "./utils";
-import { version } from "../package.json";
+import KYVE from '@kyve/core';
+import { Block } from './types';
+import { fetchBlock, fetchHeight } from './utils';
+import { name, version } from '../package.json';
 
-process.env.KYVE_RUNTIME = "@kyve/stacks";
+process.env.KYVE_RUNTIME = name;
 process.env.KYVE_VERSION = version;
 
 KYVE.metrics.register.setDefaultLabels({
@@ -11,7 +11,9 @@ KYVE.metrics.register.setDefaultLabels({
 });
 
 class KyveStacks extends KYVE {
-  public async getDataItem(key: number): Promise<{ key: number; value: any }> {
+  public async getDataItem(
+    key: number
+  ): Promise<{ key: number; value: Block }> {
     let block: Block;
 
     const height = await fetchHeight(this.pool.config.rpc);

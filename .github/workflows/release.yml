@@ -33,7 +33,7 @@ jobs:
           path: ./out/stacks-macos
       - uses: actions/upload-artifact@v3
         with:
-          name: kyve-stacks-win.exe
+          name: kyve-stacks-win
           path: ./out/stacks-win.exe
 
   docker:
