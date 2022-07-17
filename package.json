@@ -1,6 +1,6 @@
 {
   "name": "@kyve/stacks",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -22,7 +22,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@kyve/core": "1.3.2",
+    "@kyve/core": "1.3.3",
     "axios": "^0.27.2"
   },
   "devDependencies": {
