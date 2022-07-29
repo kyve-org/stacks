@@ -49,6 +49,9 @@ async function fetchMicroblocks(
       `${endpoint}/extended/v1/microblock/${hash}`
     );
 
+    // https://github.com/hirosystems/stacks-blockchain-api/issues/1164
+    data.txs = [...new Set(data.txs)];
+
     res.push(data);
   }
 
